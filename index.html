@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc Mừng Ngày Phụ Nữ Việt Nam 20/10</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .flower {
+            position: absolute;
+            font-size: 30px;
+            animation: fall linear infinite;
+            opacity: 0;
+        }
+
+        @keyframes fall {
+            0% {
+                top: -10%;
+                opacity: 1;
+            }
+            100% {
+                top: 110%;
+                opacity: 0.5;
+            }
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 50px;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 600px;
+            animation: slideIn 1s ease-out;
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            color: #d946ef;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .date {
+            color: #ec4899;
+            font-size: 3em;
+            font-weight: bold;
+            margin: 20px 0;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .message {
+            color: #475569;
+            font-size: 1.2em;
+            line-height: 1.8;
+            margin: 30px 0;
+            font-style: italic;
+        }
+
+        .heart {
+            color: #ef4444;
+            font-size: 3em;
+            animation: heartbeat 1.5s ease-in-out infinite;
+            display: inline-block;
+            margin: 20px 0;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            25% {
+                transform: scale(1.2);
+            }
+            50% {
+                transform: scale(1);
+            }
+        }
+
+        .signature {
+            margin-top: 40px;
+            color: #64748b;
+            font-size: 1.1em;
+            font-weight: 500;
+        }
+
+        .rose {
+            font-size: 4em;
+            margin: 20px 0;
+            display: inline-block;
+            animation: rotate 3s ease-in-out infinite;
+        }
+
+        @keyframes rotate {
+            0%, 100% {
+                transform: rotate(-5deg);
+            }
+            50% {
+                transform: rotate(5deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="rose">🌹</div>
+        <h1>Chúc Mừng</h1>
+        <div class="date">20/10</div>
+        <h1>Ngày Phụ Nữ Việt Nam</h1>
+        
+        <div class="heart">❤️</div>
+        
+        <div class="message">
+            Duyên phận đã khéo an bài cho em và anh gặp nhau giữa muôn người. <br>Hai nơi còn cách nhau một mái nhà, chung nhịp thở yêu thương. <br>Chúc em 20-10 luôn xinh tươi, hạnh phúc và cùng anh đi một đời.
+        </div>
+        
+        <div class="rose">🌺</div>
+        
+        <div class="signature">
+            💐 Yêu em 💐
+        </div>
+    </div>
+
+    <script>
+        // Tạo hiệu ứng hoa rơi
+        function createFlower() {
+            const flower = document.createElement('div');
+            flower.className = 'flower';
+            flower.innerHTML = ['🌸', '🌺', '🌼', '🌷', '🌹'][Math.floor(Math.random() * 5)];
+            flower.style.left = Math.random() * 100 + '%';
+            flower.style.animationDuration = (Math.random() * 3 + 4) + 's';
+            flower.style.animationDelay = Math.random() * 2 + 's';
+            document.body.appendChild(flower);
+            
+            setTimeout(() => {
+                flower.remove();
+            }, 7000);
+        }
+
+        // Tạo hoa mới mỗi 400ms
+        setInterval(createFlower, 400);
+        
+        // Tạo một số hoa ban đầu
+        for(let i = 0; i < 10; i++) {
+            setTimeout(createFlower, i * 200);
+        }
+    </script>
+</body>
+</html>
